@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PokemonController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [PokemonController::class, 'obtenerPokemonAleatorio'])->name('obtenerPokemonAleatorio');
+Route::get('/mostrar-pokemones', [PokemonController::class, 'mostrarPokemones'])->name('mostrarPokemones');
 
-Route::get('/', function () {
-    return view('welcome');
-});
